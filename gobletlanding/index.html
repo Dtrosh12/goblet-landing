@@ -13,7 +13,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background-color:#ead9bc;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='210' viewBox='0 0 150 210'><g fill='%23a8791f' fill-opacity='0.035' stroke='%23916511' stroke-opacity='0.10' stroke-width='1.1' stroke-linejoin='round' stroke-linecap='round'><g transform='translate(37 35)'><path d='M-11 8V-3L-5 2L0 -7L5 2L11 -3V8Z'/><line x1='-9' y1='4' x2='9' y2='4'/><circle cx='-11' cy='-3' r='1.5'/><circle cx='0' cy='-7' r='1.5'/><circle cx='11' cy='-3' r='1.5'/></g><g transform='translate(112 35)'><path d='M0 -7V-12'/><path d='M0 -12q5 -1 6 -5q-5 0 -6 5'/><circle cx='0' cy='-7' r='2.2'/><circle cx='-4' cy='-3' r='2.2'/><circle cx='4' cy='-3' r='2.2'/><circle cx='-6' cy='1' r='2.2'/><circle cx='0' cy='1' r='2.2'/><circle cx='6' cy='1' r='2.2'/><circle cx='-3' cy='5' r='2.2'/><circle cx='3' cy='5' r='2.2'/><circle cx='0' cy='9' r='2.2'/></g><g transform='translate(37 105)'><path d='M-1.5 -10H1.5V-5Q4.5 -4 5 -1V8.5Q5 10 3.5 10H-3.5Q-5 10 -5 8.5V-1Q-4.5 -4 -1.5 -5Z'/><line x1='-4.5' y1='2' x2='4.5' y2='2'/><line x1='-4.5' y1='5' x2='4.5' y2='5'/></g><g transform='translate(112 105)'><path d='M-11 8V-3L-5 2L0 -7L5 2L11 -3V8Z'/><line x1='-9' y1='4' x2='9' y2='4'/><circle cx='-11' cy='-3' r='1.5'/><circle cx='0' cy='-7' r='1.5'/><circle cx='11' cy='-3' r='1.5'/></g><g transform='translate(37 175)'><path d='M0 -7V-12'/><path d='M0 -12q5 -1 6 -5q-5 0 -6 5'/><circle cx='0' cy='-7' r='2.2'/><circle cx='-4' cy='-3' r='2.2'/><circle cx='4' cy='-3' r='2.2'/><circle cx='-6' cy='1' r='2.2'/><circle cx='0' cy='1' r='2.2'/><circle cx='6' cy='1' r='2.2'/><circle cx='-3' cy='5' r='2.2'/><circle cx='3' cy='5' r='2.2'/><circle cx='0' cy='9' r='2.2'/></g><g transform='translate(112 175)'><path d='M-1.5 -10H1.5V-5Q4.5 -4 5 -1V8.5Q5 10 3.5 10H-3.5Q-5 10 -5 8.5V-1Q-4.5 -4 -1.5 -5Z'/><line x1='-4.5' y1='2' x2='4.5' y2='2'/><line x1='-4.5' y1='5' x2='4.5' y2='5'/></g></g></svg>");background-repeat:repeat;
-background-size:340px 476px;background-position:0 46px;
+background-size:260px 364px;background-position:0 46px;
 color:var(--ink);font-family:"Plus Jakarta Sans",-apple-system,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:68rem;margin:0 auto;padding:0 1.4rem}
@@ -75,7 +75,18 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
 .legal .updated{margin-top:.4rem;font-size:.85rem;color:var(--gray)}
 .legal section{margin-top:2.2rem}
 .contact-box{margin-top:.9rem;border:1px solid var(--line);background:#faf6ee;border-radius:.9rem;padding:1rem 1.2rem}
-@media(max-width:760px){nav.site .hide-sm{display:none}}
+/* On a phone the LINKS are what matter in the top-right, so they stay
+   and the store badge stands down — the hero waitlist and the closing
+   App Store button both cover that ground already. Brand and nav shrink
+   together so four links and the wordmark fit a 390px screen. */
+@media(max-width:760px){
+  nav.site .store-badge{display:none}
+  nav.site{gap:.85rem;font-size:.79rem}
+  .brand span{font-size:1.15rem}
+  .brand svg{width:34px;height:37px}
+  header.site .in{padding:.55rem 0}
+}
+@media(max-width:360px){nav.site{gap:.65rem;font-size:.74rem}}
 </style>
 </head>
 <body>
@@ -101,8 +112,12 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
       <div><label for="s-name">First name</label><input id="s-name" name="name" type="text" required placeholder="Alex"></div>
       <div><label for="s-email">Email</label><input id="s-email" name="email" type="email" required placeholder="you@example.com"></div>
     </div>
+    <!-- Optional on purpose: a required phone number costs signups, and email
+         is the channel that actually reaches everyone on launch day. -->
+    <label for="s-phone">Phone <span style="font-weight:600;color:var(--gray)">(optional &mdash; for a launch-day text)</span></label>
+    <input id="s-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(555) 123-4567">
     <button class="btn-black" style="margin-top:1.3rem" type="submit">Join the waitlist</button>
-    <p class="fineprint">No spam, one email at launch. 21+ only.</p>
+    <p class="fineprint">No spam. One email at launch &mdash; a text too, if you leave a number. 21+ only.</p>
   </form>
   <div class="panel signup thanks" id="thanks"><b>You&rsquo;re on the list.</b><p class="lede" style="margin-top:.4rem">We&rsquo;ll be in touch the day Goblet launches.</p></div>
 </section>
@@ -115,9 +130,8 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
 <div class="pad"><p class="kicker">Scan a shelf</p><h3>Walk out with the right bottle</h3><p>In a shop, capture the whole shelf. Goblet reads every label standing there and pulls out the three most worth taking home.</p></div></div></div>
 </section>
 <section class="wrap narrow" style="text-align:center;padding:3.5rem 1.4rem 2rem">
-  <h2 class="section-h">Be first through the door</h2>
-  <p class="sub">Goblet is finishing up. Join the waitlist and you&rsquo;ll hear from us on launch day.</p>
-  <p style="margin-top:1.6rem"><a class="btn-black" style="width:auto;padding:.95rem 2.2rem;text-decoration:none" href="#waitlist">Join the waitlist</a></p>
+  <span class="store-badge soon" style="padding:.7rem 1.35rem;border-radius:.85rem"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.02.72c1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.25-2.54 1.27-2.6-.03-.01-2.44-.94-2.46-3.71zM14.1 5.9c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28z"/></svg><span class="t"><small style="font-size:.66rem">Coming soon to the</small><b style="font-size:1.15rem">App Store</b></span></span>
+  <p style="margin-top:.9rem;font-size:.82rem;color:var(--gray)">Free to start &middot; iPhone &middot; 21+</p>
 </section>
 </main>
 <script>
@@ -130,14 +144,14 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
 var SIGNUP_ENDPOINT = '';
 function joinList(e){
   e.preventDefault();
-  var f=e.target, name=f.name.value, email=f.email.value;
+  var f=e.target, name=f.name.value, email=f.email.value, phone=f.phone.value;
   function done(){ f.style.display='none'; document.getElementById('thanks').style.display='block'; }
   if(SIGNUP_ENDPOINT){
     fetch(SIGNUP_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-      body:JSON.stringify({name:name,email:email,source:'gobletai.app waitlist'})}).then(done).catch(done);
+      body:JSON.stringify({name:name,email:email,phone:phone,source:'gobletai.app waitlist'})}).then(done).catch(done);
   } else {
     location.href='mailto:support@goblet.live?subject='+encodeURIComponent('Goblet early access')
-      +'&body='+encodeURIComponent('Add me to the waitlist.\n\nName: '+name+'\nEmail: '+email);
+      +'&body='+encodeURIComponent('Add me to the waitlist.\n\nName: '+name+'\nEmail: '+email+'\nPhone: '+(phone||'not given'));
     done();
   }
   return false;
@@ -150,9 +164,9 @@ function joinList(e){
       <p style="margin-top:.9rem;color:var(--gray);font-size:.9rem">Download Goblet</p>
       <p style="margin-top:.7rem"><span class="store-badge soon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.02.72c1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.25-2.54 1.27-2.6-.03-.01-2.44-.94-2.46-3.71zM14.1 5.9c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28z"/></svg><span class="t"><small>Coming soon to the</small><b>App Store</b></span></span></p>
     </div>
-    <div><h4>Product</h4><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#waitlist">Early access</a></li>
+    <div><h4>Follow</h4><ul>
+      <li><a href="https://instagram.com/goblet.ai" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.45rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>Instagram</a></li>
+      <li><a href="https://tiktok.com/@goblet.ai" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.45rem"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 1 1 .77-5.06V9.68a5.67 5.67 0 0 0-.77-.05A5.66 5.66 0 1 0 15.54 15.3V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.29 4.29 0 0 1-3.24-1.48z"/></svg>TikTok</a></li>
     </ul></div>
     <div><h4>Legal</h4><ul>
       <li><a href="privacy.html">Privacy Policy</a></li>
