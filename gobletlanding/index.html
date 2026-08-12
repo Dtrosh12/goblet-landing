@@ -141,15 +141,20 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
 // Google Forms. Paste the endpoint URL here and it starts collecting silently.
 // Left empty, the form falls back to opening the visitor's mail app addressed
 // to support@goblet.live, which works today but relies on them pressing send.
-var SIGNUP_ENDPOINT = '';
+var SIGNUP_ENDPOINT = 'https://formspree.io/f/mwlebnjz';
 function joinList(e){
   e.preventDefault();
   var f=e.target, name=f.name.value, email=f.email.value, phone=f.phone.value;
   function done(){ f.style.display='none'; document.getElementById('thanks').style.display='block'; }
   if(SIGNUP_ENDPOINT){
     fetch(SIGNUP_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-      body:JSON.stringify({name:name,email:email,phone:phone,source:'gobletai.app waitlist'})}).then(done).catch(done);
+      body:JSON.stringify({name:name,email:email,phone:phone,source:'gobletai.app waitlist'})})
+      .then(function(r){ if(r.ok){ done(); } else { mailFallback(); } })
+      .catch(mailFallback);
   } else {
+    mailFallback();
+  }
+  function mailFallback(){
     location.href='mailto:support@goblet.live?subject='+encodeURIComponent('Goblet early access')
       +'&body='+encodeURIComponent('Add me to the waitlist.\n\nName: '+name+'\nEmail: '+email+'\nPhone: '+(phone||'not given'));
     done();
