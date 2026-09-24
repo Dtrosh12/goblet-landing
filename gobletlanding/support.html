@@ -115,14 +115,14 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
     <label for="f-message">Message *</label>
     <textarea id="f-message" name="message" rows="7" required placeholder="Tell us what's going on &mdash; the wine, the screen, and what you expected to happen&hellip;"></textarea>
     <button class="btn-black" style="margin-top:1.6rem" type="submit">Send Message</button>
-    <p class="fineprint">Opens your mail app addressed to <a href="mailto:support@goblet.live" style="color:var(--gold);font-weight:700">support@goblet.live</a></p>
+    <p class="fineprint">Opens your mail app addressed to <a href="mailto:support@gobletlive.com" style="color:var(--gold);font-weight:700">support@gobletlive.com</a></p>
   </form>
 </section></main>
 <script>
 function sendMsg(e){
   e.preventDefault();
   var f=e.target;
-  location.href='mailto:support@goblet.live?subject='+encodeURIComponent(f.subject.value)
+  location.href='mailto:support@gobletlive.com?subject='+encodeURIComponent(f.subject.value)
     +'&body='+encodeURIComponent(f.message.value+'\n\nFrom: '+f.email.value);
   return false;
 }
