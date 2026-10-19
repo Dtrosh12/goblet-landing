@@ -32,6 +32,13 @@ nav.site a[aria-current="page"]{opacity:1;color:var(--gold)}
 .store-badge .t b{font-size:.95rem;font-weight:700;letter-spacing:-.01em}
 .store-badge.soon{background:#111;opacity:.92;cursor:default}
 .store-badges{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.7rem;vertical-align:middle}
+/* The badge is a black chip wherever it sits, so its own colours have to beat
+   the container link rules: `footer.site a` paints links grey and `nav.site a`
+   dims them to .85. Neither mattered while the badge was an inert <span>; it
+   became an <a> the day the App Store listing went live, inherited both, and
+   the footer one turned into grey-on-black. */
+a.store-badge,footer.site a.store-badge,nav.site a.store-badge{color:#fff;opacity:1}
+
 h1{font-size:clamp(2.05rem,5.4vw,3.3rem);font-weight:800;letter-spacing:-.035em;line-height:1.08}
 .sub{color:var(--gray);font-size:1.1rem;max-width:36rem;margin:1.4rem auto 0}
 .section-h{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em}
@@ -187,10 +194,9 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
 </div>
 </section>
 <section class="wrap narrow" style="text-align:center;padding:3.5rem 1.4rem 2rem">
-  <!-- The end of the scroll is where someone who read the whole page decides.
-       Until today it was a line of fine print and nothing to press. -->
-  <a class="store-badge" href="https://apps.apple.com/app/id6811731965" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.72c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.83-.81-3.01-.79-1.55.02-2.98.9-3.78 2.28-1.61 2.8-.41 6.94 1.16 9.21.77 1.11 1.68 2.36 2.88 2.31 1.16-.05 1.6-.75 3-.75s1.79.75 3.02.72c1.25-.02 2.04-1.13 2.8-2.25.88-1.29 1.25-2.54 1.27-2.6-.03-.01-2.44-.94-2.46-3.71zM14.1 5.9c.64-.77 1.07-1.85.95-2.92-.92.04-2.03.61-2.69 1.38-.59.68-1.11 1.77-.97 2.82 1.03.08 2.07-.52 2.71-1.28z"/></svg><span class="t"><small>Download on the</small><b>App Store</b></span></a>
-  <p style="font-size:.82rem;color:var(--gray);margin-top:1rem">Free to start &middot; iPhone &amp; iPad &middot; 21+</p>
+  <!-- No button here. The nav, the hero panel and the footer each carry one
+       already; a fourth on one screen reads as nagging, not as an offer. -->
+  <p style="font-size:.82rem;color:var(--gray)">Free to start &middot; iPhone &amp; iPad &middot; 21+</p>
 </section>
 </main>
 <footer class="site"><div class="wrap">
