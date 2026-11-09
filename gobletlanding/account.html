@@ -106,7 +106,7 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
    carry a download button already. Brand and nav shrink
    together so four links and the wordmark fit a 390px screen. */
 @media(max-width:900px){
-  nav.site .store-badge{display:none}
+  nav.site .store-badge,nav.site .store-badges{display:none}
 }
 @media(max-width:760px){
   nav.site{gap:.85rem;font-size:.79rem}
@@ -115,6 +115,9 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
   header.site .in{padding:.55rem 0}
 }
 @media(max-width:360px){nav.site{gap:.65rem;font-size:.74rem}}
+/* The smallest iPhones (320 wide): the four links plus the wordmark ran 15px
+   past the edge and the whole page scrolled sideways. */
+@media(max-width:340px){nav.site{gap:.5rem;font-size:.7rem}.brand span{font-size:1.05rem}}
 </style>
 </head>
 <header class="site"><div class="wrap"><div class="in">

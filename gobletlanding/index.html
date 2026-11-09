@@ -57,7 +57,14 @@ nav.site a[aria-current="page"]{opacity:1;color:var(--gold)}
    the footer one turned into grey-on-black. */
 a.store-badge,footer.site a.store-badge,nav.site a.store-badge{color:#fff;opacity:1}
 
-h1{font-size:clamp(1.95rem,5.1vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.08}
+h1{font-size:clamp(1.95rem,5.1vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.08;text-wrap:balance}
+/* The heavy comma draws its dot at the far right of a wide glyph, so after
+   "Wine" it read as "Wine ,". Pulled in to sit against the e. */
+.tuck{margin-left:-.12em}
+/* Keeps "Know Wine," together, so a phone never leaves "Wine," alone on a line. */
+.nowrap{white-space:nowrap}
+/* An upright word after an italic one loses its gap to the slant ("youwill"). */
+.sub em{margin-right:.12em}
 .sub{color:var(--gray);font-size:1.1rem;max-width:36rem;margin:1.4rem auto 0}
 .section-h{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em}
 .panel{background:#fff;border:1px solid var(--line);border-radius:1.4rem;box-shadow:0 12px 30px rgba(67,32,43,.10)}
@@ -113,7 +120,7 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
 /* Two badges, not one, so the nav needs more room before it stands down —
    at 760px a pair of them shoved the wordmark off the line. */
 @media(max-width:900px){
-  nav.site .store-badge{display:none}
+  nav.site .store-badge,nav.site .store-badges{display:none}
 }
 @media(max-width:760px){
   nav.site{gap:.85rem;font-size:.79rem}
@@ -122,6 +129,9 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
   header.site .in{padding:.55rem 0}
 }
 @media(max-width:360px){nav.site{gap:.65rem;font-size:.74rem}}
+/* The smallest iPhones (320 wide): the four links plus the wordmark ran 15px
+   past the edge and the whole page scrolled sideways. */
+@media(max-width:340px){nav.site{gap:.5rem;font-size:.7rem}.brand span{font-size:1.05rem}}
 </style>
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "name": "Goblet", "legalName": "GOBLET SOMMELIER LLC", "url": "https://www.gobletai.app/", "logo": "https://www.gobletai.app/assets/apple-touch-icon.png", "sameAs": ["https://www.instagram.com/goblet.ai", "https://www.tiktok.com/@goblet.ai", "https://apps.apple.com/app/id6811731965", "https://play.google.com/store/apps/details?id=live.goblet.app"]}, {"@context": "https://schema.org", "@type": "WebSite", "name": "Goblet", "url": "https://www.gobletai.app/"}, {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Goblet", "description": "An AI wine scanner and sommelier. Scan a bottle, a restaurant wine list or a shop shelf, and Goblet scores each wine for your own palate.", "operatingSystem": "iOS, Android", "applicationCategory": "LifestyleApplication", "url": "https://www.gobletai.app/", "installUrl": "https://apps.apple.com/app/id6811731965", "downloadUrl": ["https://apps.apple.com/app/id6811731965", "https://play.google.com/store/apps/details?id=live.goblet.app"], "image": "https://www.gobletai.app/assets/og-image.jpg", "contentRating": "21+", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "GOBLET SOMMELIER LLC"}}]</script>
 </head>
@@ -188,7 +198,7 @@ footer.site .fine{border-top:1px solid var(--line);padding:1.3rem 0 2rem;font-si
 </svg>
 </div>
   <p class="kicker" style="margin-bottom:.85rem">The AI wine scanner &amp; sommelier app</p>
-  <h1>While Other Apps Know Wine,<br>Goblet Knows You<sup style="font-size:.5em;vertical-align:super;font-weight:600">™</sup></h1>
+  <h1>While Other Apps <span class="nowrap">Know Wine<span class="tuck">,</span></span><br>Goblet <span class="nowrap">Knows You<sup style="font-size:.5em;vertical-align:super;font-weight:600">™</sup></span></h1>
   <p class="sub">Point your camera at a bottle, a wine list, or a whole shelf. Goblet reads it and tells you which one <em>you</em> will actually like &mdash; learning your palate from every wine you rate.</p>
   <!-- Was a waitlist form. There is nothing left to wait for, so the panel
        that collected names now just points at the app. -->
