@@ -1,0 +1,37 @@
+# Goblet
+
+> Goblet is an AI wine scanner and sommelier app for iPhone, iPad and Android. Scan a wine bottle, a restaurant wine list or a shop shelf, and Goblet scores every wine out of 10 for how much you personally will enjoy it, learned from a short taste quiz and the wines you rate, with the reason in plain English. Made by GOBLET SOMMELIER LLC. Tagline: "While Other Apps Know Wine, Goblet Knows You™". For adults 21+.
+
+Key facts:
+- Scans three things: a single bottle label, a whole restaurant wine list (every bottle ranked for your palate and budget), and a shop shelf (the three bottles most worth buying).
+- Scores are personal taste-fit predictions out of 10, not critic scores or crowd averages.
+- Vinum is the built-in AI sommelier for questions and food pairings, answering from the user's own saved wines first.
+- Also: Taste Profile with a shareable Wine ID, Winery (saved wines, ratings, notes), Compass (a world map of wines drunk), and a table mode that pairs friends' phones by QR code and judges a wine list for everyone.
+- Pricing: free to download with 10 bottle scans a month plus 5 wine list and 5 shelf scans; Goblet Premium makes scanning unlimited.
+- Scan photos are analysed and discarded; only a bottle photo the user saves to their Winery is kept.
+- App Store: https://apps.apple.com/app/id6811731965
+- Google Play: https://play.google.com/store/apps/details?id=live.goblet.app
+
+## Pages
+
+- [Home](https://www.gobletai.app/): what Goblet does, with a short FAQ
+- [FAQ](https://www.gobletai.app/faq.html): how the scanner, the score and the free tier work
+- [Support](https://www.gobletai.app/support.html): help and contact
+- [Account](https://www.gobletai.app/account.html): export data, delete an account, cancel a subscription
+
+## Wine guides
+
+- [The best wine apps, and what each one is for](https://www.gobletai.app/guides/best-wine-apps.html): The best wine apps compared: label scanners, crowd ratings, cellar trackers, price finders and AI sommeliers that learn your taste. Which one is for you.
+- [How to choose wine from a restaurant wine list](https://www.gobletai.app/guides/how-to-choose-wine-from-a-wine-list.html): A calm, step-by-step way to order wine at a restaurant: set a budget, read the list, match the food, ask the sommelier and check the bottle.
+- [How to read a wine label](https://www.gobletai.app/guides/how-to-read-a-wine-label.html): What every part of a wine label means: producer, region, grape, vintage and alcohol, plus terms like Reserva, Grand Cru, Brut and Trocken.
+- [How to find out what wine you like](https://www.gobletai.app/guides/how-to-find-wine-you-like.html): Discover your wine taste: the five traits that make wines different, side-by-side tastings, and rating what you drink until your palate shows.
+- [Wine and food pairing: what wine goes with what](https://www.gobletai.app/guides/wine-and-food-pairing.html): Simple wine pairing rules and a quick table for steak, chicken, salmon, pasta, pizza, cheese, spicy food and dessert, plus the pairings to avoid.
+- [How to pick a good bottle of wine at the store](https://www.gobletai.app/guides/how-to-buy-wine-at-a-store.html): How to choose a good bottle in a shop or supermarket: set a price, shop by grape or region, find value regions, read shelf tags and ask staff.
+- [Red and white wine types: 16 grapes explained](https://www.gobletai.app/guides/wine-grapes-explained.html): The 16 wine grapes worth knowing, red and white: what each tastes like, how full it is, where it grows, and what to try next if you like it.
+- [How to taste wine, and describe it](https://www.gobletai.app/guides/how-to-taste-wine.html): How to taste wine step by step: look, swirl, smell, sip, finish. Plus words to describe wine, how to spot a faulty bottle and serving temperatures.
+- [What wine scores mean](https://www.gobletai.app/guides/wine-ratings-explained.html): What a 90-point wine score means, how critic scores and crowd star ratings work, why they disagree, and how a score for your own palate differs.
+
+## Optional
+
+- [Privacy Policy](https://www.gobletai.app/privacy.html)
+- [Terms of Use](https://www.gobletai.app/terms.html)
