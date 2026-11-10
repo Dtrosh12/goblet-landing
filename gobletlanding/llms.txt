@@ -14,8 +14,8 @@ Key facts:
 
 ## Pages
 
-- [Home](https://www.gobletai.app/): what Goblet does, with a short FAQ
-- [FAQ](https://www.gobletai.app/faq.html): how the scanner, the score and the free tier work
+- [Home](https://www.gobletai.app/): what Goblet does
+- [FAQ](https://www.gobletai.app/faq.html): what Goblet is, how it differs from other wine apps, scanning, Vinum, the free tier and your account
 - [Support](https://www.gobletai.app/support.html): help and contact
 - [Account](https://www.gobletai.app/account.html): export data, delete an account, cancel a subscription
 
